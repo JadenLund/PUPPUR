@@ -12,16 +12,4 @@ class DogController < ApplicationController
     render json: dog
     puts { dog }
   end
-
-  # def showSize
-  #   render json: Dog.find(params[:size])
-  # end
-
-  # def showGroup
-  #   render json: Dog.find(params[:group])
-  # end
-
-  # def showCoatLength
-  #   render json: Dog.find(params[:coat_length])
-  # end
 end
