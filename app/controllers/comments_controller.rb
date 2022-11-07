@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :render_not_found_response
+
   def index
     render json: Comment.all
   end
@@ -36,10 +37,7 @@ class CommentsController < ApplicationController
     params.permit(:name, :summary, :client_id, :dog_id)
   end
 
-  def render_not_found_response(exception)
-    render json: {
-             errors: {exception.record.errors.full_messages}
-           },
-           status: :not_found
+  def render_not_found_response
+    render json: { error: "Activity not found" }, status: :not_found
   end
 end

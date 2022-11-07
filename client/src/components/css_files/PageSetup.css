@@ -1,0 +1,6 @@
+.favorite-icon{
+    z-index: 999;
+}
+.favorite-icon :hover{
+   color: firebrick;
+}

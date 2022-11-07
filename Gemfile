@@ -46,7 +46,4 @@ group :development do
   # gem "spring"
 end
 
-
 gem "active_model_serializers", "~> 0.10.13"
-
-gem "ruby-lsp", "~> 0.3.5", :group => :development

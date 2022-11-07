@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import React from "react";
+import Home from "./components/Home";
+import FavoriteDogs from "./components/FavoriteDogs";
+import About from "./components/About";
+import NavBar from "./components/NavBar";
+import PageSetup from "./components/PageSetup";
+import CommentCard from './components/CommentCard'
 function App() {
+  const [client, setClient] = useState(null);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <NavBar />
+        <main>
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={<Home client={client} setClient={setClient} />}
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="/favorites" element={<FavoriteDogs />} />
+            <Route path="/breeds" element={<PageSetup />} />
+            <Route path="/comments" element={<CommentCard />} />
+          </Routes>
+        </main>
+      </BrowserRouter>
     </div>
   );
 }

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
   rescue_from ActiveRecord::RecordInvalid,
               with: :render_unprocessable_entity_response
 
-  before_action :authorize
+  # before_action :authorize
 
   private
 
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::API
 
     unless @current_client
       render json: {
-               errors: ["Not Authorized, please login"]
+               errors: ["Not Authorized, please login"],
              },
              status: :unauthorized
     end
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::API
 
   def render_unprocessable_entity_response(exception)
     render json: {
-             errors: exception.record.errors.full_messages
+             errors: exception.record.errors.full_messages,
            },
            status: :unprocessable_entity
   end
