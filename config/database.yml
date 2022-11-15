@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: PUPPUR_production
   username: PUPPUR
   password: <%= ENV["PUPPUR_DATABASE_PASSWORD"] %>

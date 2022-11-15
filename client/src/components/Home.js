@@ -27,11 +27,11 @@ function Home({ client, setClient }) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((client) => setLogin(client));
+    }).then((resp) => {
+      if (resp.ok) {
+        resp.json().then((client) => setLogin(client));
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        resp.json().then((err) => setErrors(err.errors));
       }
     });
   };

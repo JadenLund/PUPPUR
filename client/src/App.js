@@ -7,9 +7,18 @@ import FavoriteDogs from "./components/FavoriteDogs";
 import About from "./components/About";
 import NavBar from "./components/NavBar";
 import PageSetup from "./components/PageSetup";
-import CommentCard from './components/CommentCard'
+
 function App() {
   const [client, setClient] = useState(null);
+
+  useEffect(() => {
+    fetch("/me").then((resp) => {
+      if (resp.ok) {
+        resp.json().then((client) => setClient(client));
+      }
+    });
+  }, []);
+
   return (
     <div>
       <BrowserRouter>
@@ -23,8 +32,7 @@ function App() {
             />
             <Route path="/about" element={<About />} />
             <Route path="/favorites" element={<FavoriteDogs />} />
-            <Route path="/breeds" element={<PageSetup />} />
-            <Route path="/comments" element={<CommentCard />} />
+            <Route path="/breeds" element={<PageSetup client={client}/>} />
           </Routes>
         </main>
       </BrowserRouter>

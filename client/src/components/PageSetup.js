@@ -1,10 +1,12 @@
+
 import React, { useState } from "react";
 import DogBreeds from "./DogBreeds";
 import Filter from "./Filter";
 import SearchBar from "./SearchBar";
 import dogFilterHelpers from "./utilities/dogFilterHelpers";
 
-function PageSetup() {
+function PageSetup({client}) {
+  console.log("client", client)
   const { allLabelsObject, sizeLabels, akcGroupLabels, coatLengthLabels } =
     dogFilterHelpers();
   const [searchTerm, setSearchTerm] = useState("");
@@ -21,7 +23,7 @@ function PageSetup() {
     <div>
       <SearchBar searchTerm={searchTerm} onChangeSearch={setSearchTerm} />
       <Filter sizeLabels={sizeLabels} akcGroupLabels={akcGroupLabels} coatLengthLabels={coatLengthLabels} handleToggle={handleToggle}/>
-      <DogBreeds searchTerm={searchTerm} checkboxes={checkbox} sizeLabels={sizeLabels} akcGroupLabels={akcGroupLabels} coatLengthLabels={coatLengthLabels}/>
+      <DogBreeds client={client} searchTerm={searchTerm} checkboxes={checkbox} sizeLabels={sizeLabels} akcGroupLabels={akcGroupLabels} coatLengthLabels={coatLengthLabels}/>
     </div>
   );
 }

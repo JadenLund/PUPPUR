@@ -8,23 +8,22 @@ function DogBreeds({
   checkboxes,
   sizeLabels,
   akcGroupLabels,
-  coatLengthLabels,
+  coatLengthLabels, client, comment
 }) {
   const [breeds, setBreeds] = useState([]);
 
   useEffect(() => {
     //fetches all of the dog data from the api
     fetch(`/dog`)
-      .then((res) => res.json())
-      .then((res) => {
-        setBreeds(res);
+      .then((resp) => resp.json())
+      .then((resp) => {
+        setBreeds(resp);
       });
   }, []);
 
   const filters = Object.keys(checkboxes); //gives back an array of
 
   const dogsToDisplay = breeds.filter((dog) => {
-    //hi
     const breedMatchesTerm = dog.breed
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
@@ -59,7 +58,7 @@ function DogBreeds({
         {/* //returns each dog card to display on the page*/}
         <Card.Group itemsPerRow={3}>
           {dogsToDisplay.map((dog) => (
-            <DogBreedCard id={dog.id} />
+            <DogBreedCard comment={comment} dog={dog} client={client}/>
           ))}
         </Card.Group>
       </div>
