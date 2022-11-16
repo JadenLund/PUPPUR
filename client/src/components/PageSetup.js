@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar";
 import dogFilterHelpers from "./utilities/dogFilterHelpers";
 import { Route, Routes } from "react-router-dom";
 import Logout from "./Home";
-import { Segment } from "semantic-ui-react";
+import { Segment, Image, Header } from "semantic-ui-react";
 
 import "./css_files/PageSetup.css";
 
@@ -28,7 +28,7 @@ function PageSetup({ client, setClient }) {
         <div>
           <Segment>
             <div className="search-title">
-              <h4>Filters</h4>
+
               <SearchBar
                 searchTerm={searchTerm}
                 onChangeSearch={setSearchTerm}
@@ -37,6 +37,15 @@ function PageSetup({ client, setClient }) {
           </Segment>
           <div className="filter-dogs">
             <Segment>
+            <div>
+                <Header textAlign="center" as="h2">
+                  Filters
+                </Header>
+                <Image
+                  size="small"
+                  src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce8b1e76965389.5c7945b0cffef.gif"
+                />
+              </div>
               <Filter
                 sizeLabels={sizeLabels}
                 akcGroupLabels={akcGroupLabels}
@@ -45,14 +54,14 @@ function PageSetup({ client, setClient }) {
               />
             </Segment>
             {/* <Segment> */}
-              <DogBreeds
-                client={client}
-                searchTerm={searchTerm}
-                checkboxes={checkbox}
-                sizeLabels={sizeLabels}
-                akcGroupLabels={akcGroupLabels}
-                coatLengthLabels={coatLengthLabels}
-              />
+            <DogBreeds
+              client={client}
+              searchTerm={searchTerm}
+              checkboxes={checkbox}
+              sizeLabels={sizeLabels}
+              akcGroupLabels={akcGroupLabels}
+              coatLengthLabels={coatLengthLabels}
+            />
             {/* </Segment> */}
           </div>
         </div>

@@ -34,8 +34,6 @@ function DogBreedCard({ client, dog }) {
   });
   const { open, dimmer } = state;
 
-
-
   function handleMoreInfo() {
     //more info toggle
     setMoreInfo(!moreInfo);
@@ -97,7 +95,8 @@ function DogBreedCard({ client, dog }) {
                 <div>
                   <h3 className="comment-title">
                     {eachCommentForThisDog.name}
-                  </h3>s
+                  </h3>
+                  s
                   <p className="comment-summary">
                     {eachCommentForThisDog.summary}
                   </p>
@@ -109,7 +108,6 @@ function DogBreedCard({ client, dog }) {
                       X
                     </Button>
                   ) : null}
-
                   {/* <Icon
                   onClick={handleThumbsUp}
                   color="grey"
@@ -163,8 +161,14 @@ function DogBreedCard({ client, dog }) {
         </Card.Content>
 
         <Card.Content extra>
-          <a onClick={handleMoreInfo}>{moreInfo ? "LESS INFO" : "MORE INFO"}</a>{" "}
+          <center>
+            <a onClick={handleMoreInfo}>
+              {moreInfo ? "LESS INFO" : "MORE INFO"}
+            </a>{" "}
+          </center>
           <Button
+            floated="right"
+            color="teal"
             onClick={() => dispatch({ type: "OPEN_MODAL", dimmer: "blurring" })}
           >
             Comments

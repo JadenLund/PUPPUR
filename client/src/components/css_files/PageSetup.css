@@ -1,12 +1,12 @@
-.favorite-icon {
+/* .favorite-icon {
   z-index: 999;
 }
 .favorite-icon :hover {
   color: firebrick;
-}
+} */
 .checkbox-filters {
   min-width: 180px;
-  color: red;
+  color: rgb(22, 120, 120);
 }
 .login-button,
 .signup-button {
