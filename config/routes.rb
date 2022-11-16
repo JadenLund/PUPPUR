@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   delete "/comments/:id", to: "comments#delete"
   patch "/comments/:id/likes", to: "comments#increment_likes"
 
+  get "*path",
+      to: "fallback#index",
+      constraints: ->(req) { !req.xhr? && req.format.html? }
+
   resources :dog, only: %i[index show search]
   resources :comments, only: %i[index show]
   resources :favorite_dogs, only: %i[create destroy]
