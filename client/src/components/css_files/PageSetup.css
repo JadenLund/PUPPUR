@@ -17,19 +17,16 @@
 .marquee {
   overflow: hidden;
   position: relative;
-  animation: MarqueeLeft linear 18s infinite;
+  animation: MarqueeLeft linear 10s infinite;
   grid-area: footer;
 }
 
 @keyframes MarqueeLeft {
   0% {
-    right: -50%;
-  }
-  50% {
-    right: 100%;
+    left: -30%;
   }
   100% {
-    right: -50%;
+    left: 100%;
   }
 }
 
