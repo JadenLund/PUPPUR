@@ -1,26 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "semantic-ui-react";
-
-function NavBar() {
+import { Button, Header } from "semantic-ui-react";
+import './css_files/NavBar.css'
+function NavBar({ client }) {
   return (
     <nav className="nav">
-      <header className="site-title">Dog.io</header>
-      <li>
-        <Link to="/">HOME</Link>
-      </li>
-      <li>
-        <Link to="/breeds">DOG BREEDS</Link>
-      </li>
-      <li>
-        <Link to="/favorites">FAVORITES</Link>
-      </li>
-      <li>
-        <Link to="/about">ABOUT</Link>
-      </li>
-      <li>
-        <Link to="/comments">COMMENTS</Link>
-      </li>
+      <Header as="h4">
+        {/* <Link className="home-link" to="/">
+          HOME
+        </Link> */}
+
+        <Link className="dog-breeds-link" to="/">
+          DOG BREEDS
+        </Link>
+
+        <Link className="about-link" to="/about">
+          ABOUT
+        </Link>
+      </Header>
+      {/* <Link to="/favorites">FAVORITES</Link> */}
     </nav>
   );
 }

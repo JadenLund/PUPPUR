@@ -2,7 +2,7 @@ class ClientsController < ApplicationController
   skip_before_action :authorize, only: :create
 
   def create
-    client = Client.create(client_params)
+    client = Client.create!(client_params)
     session[:client_id] = client.id
     render json: client, status: :created
   end

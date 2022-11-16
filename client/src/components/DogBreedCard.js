@@ -5,11 +5,11 @@ import {
   Grid,
   Modal,
   Button,
-  Icon,
+  Segment,
 } from "semantic-ui-react";
-import React, { useState, useEffect } from "react";
-import "./css_files/PageSetup.css";
+import React, { useState, useEffect, useReducer } from "react";
 import NewCommentForm from "./CommentForm";
+import "./css_files/DogBreedCard.css";
 
 function exampleReducer(state, action) {
   switch (action.type) {
@@ -21,46 +21,58 @@ function exampleReducer(state, action) {
       throw new Error();
   }
 }
-function DogBreedCard({ client, dog, comment }) {
-  const [likes, setLikes] = useState(0);
-  const [aDog, setADog] = useState([]);
-  const [moreInfo, setMoreInfo] = useState(false);
 
-  const [state, dispatch] = React.useReducer(exampleReducer, {
+function DogBreedCard({ client, dog }) {
+  const [moreInfo, setMoreInfo] = useState(false);
+  const [comments, setComments] = useState(dog.comments || []);
+  const [newComment, setNewComment] = useState(false);
+  const [button, setButton] = useState(false);
+
+  const [state, dispatch] = useReducer(exampleReducer, {
     open: false,
     dimmer: undefined,
   });
   const { open, dimmer } = state;
-  // console.log(dog.comments)
-  useEffect(() => {
-    //fetches one dog at a time
-    fetch(`/dog/${dog.id}`)
-      .then((resp) => resp.json())
-      .then((resp) => {
-        setADog(resp);
-      });
-  }, []);
+
+
 
   function handleMoreInfo() {
     //more info toggle
     setMoreInfo(!moreInfo);
   }
   function handleDelete(id) {
-    fetch(`/comments/${id}`, { method: "DELETE" });
-  }
-  function handleUpdate(id) {
-    fetch(`/comments/${id}`, { method: "PATCH" });
-  }
-  function handleThumbsUp(eachCommentForThisDog) {
-    //make this a post
-    dog.comments[0].likes += 1;
-    console.log(dog.comments[0].likes);
+    fetch(`/comments/${id}`, { method: "DELETE" }).then(() => {
+      const newComments = comments.filter((comment) => comment.id != id);
+      setComments(newComments);
+    });
   }
 
-  function handleThumbsDown() {}
+  // function handleThumbsUp(eachCommentForThisDog) {
+  //   //make this a post
+  //   dog.comments[0].likes += 1;
+  //   console.log(dog.comments[0].likes);
+  // }
+
+  // function handleThumbsDown() {}
   // function handleNewComment() {}
   // {dog.comments[0].name === undefined ? "There are no comments yet!" : dog.comments[0].name }
   // !!dog.comments.length ? dog.comments.at(0) : ""
+
+  function handleNewComment() {
+    setNewComment(!newComment);
+    setButton(!button);
+    if (!newComment) {
+      document.getElementById("add-comment").style.display = "none";
+    } else {
+      document.getElementById("add-comment").style.display = "block";
+    }
+  }
+
+  function submitNewComment(comment) {
+    const newComments = [...comments];
+    newComments.push(comment);
+    setComments(newComments);
+  }
   return (
     <div>
       <Modal
@@ -79,27 +91,26 @@ function DogBreedCard({ client, dog, comment }) {
         </Modal.Header>
 
         <Modal.Content>
-          {dog.comments &&
-            dog.comments.map((eachCommentForThisDog) => (
-              <div>
-                <h3 className="comment-title">{eachCommentForThisDog.name}</h3>
-                <p>user:</p>
-                <p className="comment-summary">
-                  {eachCommentForThisDog.summary}
-                </p>
-                <Button
-                  className="delete-button"
-                  onClick={() => handleDelete(eachCommentForThisDog.id)}
-                >
-                  X
-                </Button>
-                <Button
-                  className="Edit-button"
-                  onClick={() => handleUpdate(eachCommentForThisDog.id)}
-                >
-                  Edit
-                </Button>
-                <Icon
+          {comments &&
+            comments.map((eachCommentForThisDog) => (
+              <Segment key={eachCommentForThisDog.id}>
+                <div>
+                  <h3 className="comment-title">
+                    {eachCommentForThisDog.name}
+                  </h3>s
+                  <p className="comment-summary">
+                    {eachCommentForThisDog.summary}
+                  </p>
+                  {eachCommentForThisDog.client_id == client.id ? (
+                    <Button
+                      className="delete-button"
+                      onClick={() => handleDelete(eachCommentForThisDog.id)}
+                    >
+                      X
+                    </Button>
+                  ) : null}
+
+                  {/* <Icon
                   onClick={handleThumbsUp}
                   color="grey"
                   name="thumbs up"
@@ -111,24 +122,35 @@ function DogBreedCard({ client, dog, comment }) {
                   rotated="flipped horizontally"
                   name="thumbs down"
                   size="big"
-                />
-              </div>
+                /> */}
+                </div>
+              </Segment>
             ))}
 
-          <NewCommentForm client={client} dog={dog} />
+          <NewCommentForm
+            client={client}
+            dog={dog}
+            newComment={newComment}
+            submitNewComment={submitNewComment}
+            closeNewComment={handleNewComment}
+          />
+          <div id="add-comment">
+            Want to add a comment? Click {"  "}
+            <button onClick={handleNewComment}>Here</button>
+          </div>
         </Modal.Content>
       </Modal>
 
       <Card className="dog-card">
-        <Image
+        {/* <Image
           className="favorite-icon"
           fluid
           label={{ as: "a", corner: "left", icon: "heart" }}
-        />
+        /> */}
         <div className="dog-card-image">
           <Reveal animated="move" instant>
             <Reveal.Content visible>
-              <Image src={dog.icon} size={"medium"} />
+              <Image className="dog-icon" src={dog.icon} size={"medium"} />
             </Reveal.Content>
             <Reveal.Content hidden>
               <Image src={dog.image} size="medium" />

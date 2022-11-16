@@ -1,42 +1,53 @@
-import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
-import React from "react";
-import Home from "./components/Home";
-import FavoriteDogs from "./components/FavoriteDogs";
 import About from "./components/About";
+import Home from "./components/Home";
+import Logout from "./components/Logout";
 import NavBar from "./components/NavBar";
 import PageSetup from "./components/PageSetup";
+import {Segment } from "semantic-ui-react";
 
 function App() {
   const [client, setClient] = useState(null);
 
   useEffect(() => {
     fetch("/me").then((resp) => {
-      if (resp.ok) {
-        resp.json().then((client) => setClient(client));
-      }
+      if (resp.ok) resp.json().then((client) => setClient(client));
+      else setClient(null);
     });
   }, []);
 
   return (
-    <div>
-      <BrowserRouter>
-        <NavBar />
-        <main>
+    <BrowserRouter>
+      <div>
+        {client ? (
+          <div className="container">
+            <Segment>
+              <div className="navbar">
+                <Logout setClient={setClient} />
+                <NavBar client={client} />
+              </div>
+            </Segment>
+            <Routes>
+              <Route path="/about" element={<About />} />
+              {/* <Route path="/favorites" element={<FavoriteDogs />} /> */}
+              <Route path="/" element={<PageSetup client={client} />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </div>
+        ) : (
           <Routes>
             <Route
               exact
               path="/"
               element={<Home client={client} setClient={setClient} />}
             />
-            <Route path="/about" element={<About />} />
-            <Route path="/favorites" element={<FavoriteDogs />} />
-            <Route path="/breeds" element={<PageSetup client={client}/>} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
-        </main>
-      </BrowserRouter>
-    </div>
+        )}
+      </div>
+    </BrowserRouter>
   );
 }
 

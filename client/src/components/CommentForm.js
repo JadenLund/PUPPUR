@@ -1,21 +1,16 @@
 import React, { useState } from "react";
 import { Button, Form, Message } from "semantic-ui-react";
 
-function NewCommentForm({ dog, client, setClient }) {
-  const [newComment, setNewComment] = useState(false);
-  const [button, setButton] = useState(false);
-  const [submitForm, setSubmitForm] = useState();
+function NewCommentForm({
+  dog,
+  client,
+  newComment,
+  submitNewComment,
+  closeNewComment,
+}) {
   const [name, setName] = useState();
   const [summary, setSummary] = useState();
 
-
-  function handleNewComment() {
-    setNewComment(!newComment);
-    setButton(!button);
-    if (button == false) {
-      document.getElementById("add-comment").style.display = "none";
-    }
-  }
   const handleNameChange = (e, { name, value }) => {
     setName(value);
   };
@@ -33,17 +28,16 @@ function NewCommentForm({ dog, client, setClient }) {
       body: JSON.stringify(data),
     })
       .then((resp) => {
-        resp.json();
+        return resp.json();
       })
-      .then();
+      .then((data) => {
+        submitNewComment(data);
+        closeNewComment();
+      });
   };
 
   return (
     <Form onSubmit={handleSubmit}>
-      <div id={"add-comment"} className="add-comment">
-        Want to add a comment? Click {"  "}
-        <button onClick={handleNewComment}>Here</button>
-      </div>
       <div className="new-comment-form">
         {newComment ? (
           <div>

@@ -8,7 +8,9 @@ function DogBreeds({
   checkboxes,
   sizeLabels,
   akcGroupLabels,
-  coatLengthLabels, client, comment
+  coatLengthLabels,
+  client,
+  comment,
 }) {
   const [breeds, setBreeds] = useState([]);
 
@@ -52,17 +54,16 @@ function DogBreeds({
   });
 
   return (
-    <div>
-      <Logout />
-      <div className="dog-breeds">
-        {/* //returns each dog card to display on the page*/}
-        <Card.Group itemsPerRow={3}>
-          {dogsToDisplay.map((dog) => (
-            <DogBreedCard comment={comment} dog={dog} client={client}/>
-          ))}
-        </Card.Group>
-      </div>
-    </div>
+    <>
+      {/* //returns each dog card to display on the page*/}
+      <Card.Group className="all-cards" itemsPerRow={4}>
+        {dogsToDisplay.map((dog) => (
+          <Card className="dog-card" key={dog.id}>
+            <DogBreedCard comment={comment} dog={dog} client={client} />
+          </Card>
+        ))}
+      </Card.Group>
+    </>
   );
 }
 export default DogBreeds;

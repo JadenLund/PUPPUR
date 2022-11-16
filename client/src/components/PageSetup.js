@@ -1,12 +1,15 @@
-
 import React, { useState } from "react";
 import DogBreeds from "./DogBreeds";
 import Filter from "./Filter";
 import SearchBar from "./SearchBar";
 import dogFilterHelpers from "./utilities/dogFilterHelpers";
+import { Route, Routes } from "react-router-dom";
+import Logout from "./Home";
+import { Segment } from "semantic-ui-react";
 
-function PageSetup({client}) {
-  console.log("client", client)
+import "./css_files/PageSetup.css";
+
+function PageSetup({ client, setClient }) {
   const { allLabelsObject, sizeLabels, akcGroupLabels, coatLengthLabels } =
     dogFilterHelpers();
   const [searchTerm, setSearchTerm] = useState("");
@@ -21,9 +24,41 @@ function PageSetup({client}) {
 
   return (
     <div>
-      <SearchBar searchTerm={searchTerm} onChangeSearch={setSearchTerm} />
-      <Filter sizeLabels={sizeLabels} akcGroupLabels={akcGroupLabels} coatLengthLabels={coatLengthLabels} handleToggle={handleToggle}/>
-      <DogBreeds client={client} searchTerm={searchTerm} checkboxes={checkbox} sizeLabels={sizeLabels} akcGroupLabels={akcGroupLabels} coatLengthLabels={coatLengthLabels}/>
+      {client ? (
+        <div>
+          <Segment>
+            <div className="search-title">
+              <h4>Filters</h4>
+              <SearchBar
+                searchTerm={searchTerm}
+                onChangeSearch={setSearchTerm}
+              />
+            </div>
+          </Segment>
+          <div className="filter-dogs">
+            <Segment>
+              <Filter
+                sizeLabels={sizeLabels}
+                akcGroupLabels={akcGroupLabels}
+                coatLengthLabels={coatLengthLabels}
+                handleToggle={handleToggle}
+              />
+            </Segment>
+            {/* <Segment> */}
+              <DogBreeds
+                client={client}
+                searchTerm={searchTerm}
+                checkboxes={checkbox}
+                sizeLabels={sizeLabels}
+                akcGroupLabels={akcGroupLabels}
+                coatLengthLabels={coatLengthLabels}
+              />
+            {/* </Segment> */}
+          </div>
+        </div>
+      ) : (
+        <Logout setClient={setClient} />
+      )}
     </div>
   );
 }
