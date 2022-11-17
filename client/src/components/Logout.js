@@ -10,7 +10,7 @@ function Logout({setClient}) {
     });
   }
   return (
-    <Button variant="outline" onClick={handleLogoutClick}>
+    <Button color='teal' variant="outline" onClick={handleLogoutClick}>
       Logout
     </Button>
   );

@@ -51,7 +51,7 @@ function NewCommentForm({
               label="About"
               placeholder="Tell us what you know!"
             />
-            <Form.Button content="Submit" />
+            <Form.Button color='teal' content="Submit" />
           </div>
         ) : null}
       </div>

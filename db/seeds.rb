@@ -411,6 +411,202 @@ Comment.create!(
   client_id: 5,
   dog_id: 12
 )
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 1
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 2
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 3
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 4
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 5
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 6
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 7
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 8
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 9
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 10
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 11
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 12
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 13
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 14
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 15
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 16
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 17
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 18
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 19
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 20
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 21
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 22
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 23
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 24
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 25
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 26
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 27
+)
+Comment.create!(
+  name: "I love dogs",
+  summary: "This dog breed is my favorite",
+  likes: 3,
+  client_id: 1,
+  dog_id: 28
+)
 # Comment.create!(name: "",  summary: "", likes: , client_id: , dog_id: )
 
 puts "Done seeding all data!"

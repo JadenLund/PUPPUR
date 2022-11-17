@@ -80,7 +80,7 @@ function DogBreedCard({ client, dog, handleFavorites, handleUnfavorites }) {
       >
         <Modal.Header floated="left">
           Comments
-          <Button
+          <Button color='teal'
             floated="right"
             onClick={() => dispatch({ type: "CLOSE_MODAL" })}
           >
@@ -101,7 +101,7 @@ function DogBreedCard({ client, dog, handleFavorites, handleUnfavorites }) {
                     {eachCommentForThisDog.summary}
                   </p>
                   {eachCommentForThisDog.client_id == client.id ? (
-                    <Button
+                    <Button color='teal'
                       className="delete-button"
                       onClick={() => handleDelete(eachCommentForThisDog.id)}
                     >
@@ -134,7 +134,7 @@ function DogBreedCard({ client, dog, handleFavorites, handleUnfavorites }) {
           />
           <div id="add-comment">
             Want to add a comment? Click {"  "}
-            <button onClick={handleNewComment}>Here</button>
+            <Button  color='teal' compact onClick={handleNewComment}>Here</Button>
           </div>
         </Modal.Content>
       </Modal>
