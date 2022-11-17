@@ -6,6 +6,7 @@ import {
   Modal,
   Button,
   Segment,
+  Comment,
 } from "semantic-ui-react";
 import React, { useState, useEffect, useReducer } from "react";
 import NewCommentForm from "./CommentForm";
@@ -80,7 +81,8 @@ function DogBreedCard({ client, dog, handleFavorites, handleUnfavorites }) {
       >
         <Modal.Header floated="left">
           Comments
-          <Button color='teal'
+          <Button
+            color="teal"
             floated="right"
             onClick={() => dispatch({ type: "CLOSE_MODAL" })}
           >
@@ -89,26 +91,32 @@ function DogBreedCard({ client, dog, handleFavorites, handleUnfavorites }) {
         </Modal.Header>
 
         <Modal.Content>
-          {comments &&
-            comments.map((eachCommentForThisDog) => (
-              <Segment key={eachCommentForThisDog.id}>
-                <div>
-                  <h3 className="comment-title">
-                    {eachCommentForThisDog.name}
-                  </h3>
-
-                  <p className="comment-summary">
-                    {eachCommentForThisDog.summary}
-                  </p>
-                  {eachCommentForThisDog.client_id == client.id ? (
-                    <Button color='teal'
-                      className="delete-button"
-                      onClick={() => handleDelete(eachCommentForThisDog.id)}
-                    >
-                      X
-                    </Button>
-                  ) : null}
-                  {/* <Icon
+          <Comment.Group size="massive">
+            <Comment>
+              <Comment.Content>
+                {comments &&
+                  comments.map((eachCommentForThisDog) => (
+                    <Segment key={eachCommentForThisDog.id}>
+                      <div>
+                        <Comment.Author as='h2' className="comment-title">
+                          {eachCommentForThisDog.name}
+                        </Comment.Author>
+                        <Comment.Text className="comment-summary">
+                          {eachCommentForThisDog.summary}
+                        </Comment.Text>
+                        {eachCommentForThisDog.client_id == client.id ? (
+                          <Button
+                            color="teal"
+                            className="delete-button"
+                            compact
+                            onClick={() =>
+                              handleDelete(eachCommentForThisDog.id)
+                            }
+                          >
+                            X
+                          </Button>
+                        ) : null}
+                        {/* <Icon
                   onClick={handleThumbsUp}
                   color="grey"
                   name="thumbs up"
@@ -121,28 +129,35 @@ function DogBreedCard({ client, dog, handleFavorites, handleUnfavorites }) {
                   name="thumbs down"
                   size="big"
                 /> */}
-                </div>
-              </Segment>
-            ))}
+                      </div>
+                    </Segment>
+                  ))}
 
-          <NewCommentForm
-            client={client}
-            dog={dog}
-            newComment={newComment}
-            submitNewComment={submitNewComment}
-            closeNewComment={handleNewComment}
-          />
-          <div id="add-comment">
-            Want to add a comment? Click {"  "}
-            <Button  color='teal' compact onClick={handleNewComment}>Here</Button>
-          </div>
+                <NewCommentForm
+                  client={client}
+                  dog={dog}
+                  newComment={newComment}
+                  submitNewComment={submitNewComment}
+                  closeNewComment={handleNewComment}
+                />
+                <div id="add-comment">
+                  Want to add a comment? Click {"  "}
+                  <Button color="teal" compact onClick={handleNewComment}>
+                    Here
+                  </Button>
+                </div>
+              </Comment.Content>
+            </Comment>
+          </Comment.Group>
         </Modal.Content>
       </Modal>
 
       <Card className="dog-card">
         <Image
-          onClick={() => dog.favorite ? handleUnfavorites(dog.id) : handleFavorites(dog.id)}
-          className={`favorite-icon ${dog.favorite ? 'active' : ""}`}
+          onClick={() =>
+            dog.favorite ? handleUnfavorites(dog.id) : handleFavorites(dog.id)
+          }
+          className={`favorite-icon ${dog.favorite ? "active" : ""}`}
           fluid
           label={{ as: "a", corner: "left", icon: "heart" }}
         />

@@ -15,8 +15,7 @@ puts "Seeding dog breeds..."
 
 Dog.create!(
   breed: "Doberman Pinscher",
-  image:
-    "https://st.depositphotos.com/1004592/3767/i/600/depositphotos_37677629-stock-photo-doberman-pinscher.jpg",
+  image: "../DobermanIRL.png",
   size: "Large",
   group: "Working",
   coat_length: "Short",
@@ -25,8 +24,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Akita",
-  image:
-    "https://www.purina.co.uk/sites/default/files/styles/square_medium_440x440/../2022-07/Japanese-Akita.jpg?itok=GbMV9z73",
+  image: "../AkitaIRL.png",
   size: "Large",
   group: "Working",
   coat_length: "Medium",
@@ -35,7 +33,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Xoloitzcuintli",
-  image: "https://www.europetnet.org/images/dogbreeds/mexicanhairlessdog.jpg",
+  image: "../XoloIRL.png",
   size: "Medium",
   group: "Non-Sporting",
   coat_length: "Short",
@@ -44,8 +42,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Golden Retriever",
-  image:
-    "https://www.purina.co.nz/sites/default/files/2021-02/BREED%20Hero_0059_golden_retriever.jpg",
+  image: "../GoldenIRL.png",
   size: "Large",
   group: "Sporting",
   coat_length: "Long",
@@ -54,8 +51,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Labrador Retrievers",
-  image:
-    "https://media.istockphoto.com/photos/labrador-retriever-12-months-old-sitting-picture-id450726311?k=20&m=450726311&s=612x612&w=0&h=6gUrHrWD6HV4q3gURf1uKFx7zNjMscDy7AMlZrhGplE=",
+  image: "../LabIRL.png",
   size: "Large",
   group: "Sporting",
   coat_length: "Medium",
@@ -64,8 +60,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Chihuahua",
-  image:
-    "https://www.purina.co.uk/sites/default/files/styles/square_medium_440x440/../2022-07/Chihuahua-Smooth-Coat.jpg?itok=J40w8Swm",
+  image: "../ChiuIRL.png",
   size: "Small",
   group: "Toy",
   coat_length: "Medium",
@@ -74,8 +69,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Shiba Inu",
-  image:
-    "https://www.hundeo.com/wp-content/uploads/2019/05/Shiba-Inu-Profilbild.jpg",
+  image: "../ShibaIRL.png",
   size: "Medium",
   group: "Sporting",
   coat_length: "Medium",
@@ -84,8 +78,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Standard Poodle",
-  image:
-    "https://media.istockphoto.com/photos/white-standard-poodle-picture-id994143796?k=20&m=994143796&s=612x612&w=0&h=eyZZgMyQLTh-SAVkzxj_PMczn4BLIoM9ATg4exktbag=",
+  image: "../PoodleIRL.png",
   size: "Large",
   group: "Non-Sporting",
   coat_length: "Medium",
@@ -94,8 +87,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Siberian Husky",
-  image:
-    "https://img.freepik.com/premium-photo/siberian-husky-front-white-background_191971-25384.jpg",
+  image: "../HuskyIRL.png",
   size: "Medium",
   group: "Working",
   coat_length: "Long",
@@ -104,8 +96,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "French Bulldog",
-  image:
-    "https://www.purina.co.nz/sites/default/files/styles/ttt_image_510/../2021-02/BREED%20Hero%20Mobile_0114_french_bulldog.jpg?itok=WANE6bt-",
+  image: "../FrenchieIRL.png",
   size: "Small",
   group: "Non-Sporting",
   coat_length: "Short",
@@ -114,8 +105,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "German Shepherd",
-  image:
-    "https://www.purina.co.nz/sites/default/files/2021-02/BREED%20Hero_0053_german_shepherd.jpg",
+  image: "../GermanIRL.png",
   size: "Large",
   group: "Herding",
   coat_length: "Medium",
@@ -124,7 +114,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "English Bulldog",
-  image: "https://www.cesarsway.com/wp-content/uploads/2019/02/Bulldog.jpeg",
+  image: "../benglishIRL.png",
   size: "Small",
   group: "Non-Sporting",
   coat_length: "Short",
@@ -133,7 +123,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Afghan Hound",
-  image: "db/Dog_images/afghanHound.png",
+  image: "../AfghanIRL.png",
   size: "Large",
   group: "Hound",
   coat_length: "Medium",
@@ -142,8 +132,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Border Collie",
-  image:
-    "https://www.purina.co.nz/sites/default/files/2021-02/BREED%20Hero_0018_border_collie.jpg",
+  image: "../CollieIRL.png",
   size: "Medium",
   group: "Miscellaneous ",
   coat_length: "Medium",
@@ -152,8 +141,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "American Eskimo",
-  image:
-    "https://ckcusa.com/media/147408/american-eskimo-miniature.jpg?preset=ckcBreedImage375",
+  image: "../EskimoIRL.png",
   size: "Medium",
   group: "Non-Sporting",
   coat_length: "Medium",
@@ -162,8 +150,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Rottweiler",
-  image:
-    "http://www.pashudhanpraharee.com/wp-content/uploads/2022/03/Rottweiler-dog-jpg.jpg",
+  image: "../RottIRL.png",
   size: "Large",
   group: "Working",
   coat_length: "Short",
@@ -172,8 +159,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Dachshund",
-  image:
-    "https://www.purina.co.nz/sites/default/files/2021-02/BREED%20Hero_0041_dachshund_smooth_mini.jpg",
+  image: "../WeenieIRL.png",
   size: "Small",
   group: "Hound",
   coat_length: "Short",
@@ -182,8 +168,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Great Dane",
-  image:
-    "https://www.petbarn.com.au/petspot/app/uploads/2014/07/54.-Great-Dane.jpg",
+  image: "../DaneIRL.png",
   size: "Large",
   group: "Working",
   coat_length: "Short",
@@ -192,8 +177,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Maltese",
-  image:
-    "https://dogsbestlife.com/wp-content/uploads/2020/03/Maltese-scaled.jpeg",
+  image: "../MalteseIRL.png",
   size: "Small",
   group: "Toy",
   coat_length: "Long",
@@ -202,8 +186,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Basset Hound",
-  image:
-    "https://img.freepik.com/premium-photo/basset-hound-dog_87557-11183.jpg",
+  image: "../BassetIRL.png",
   size: "Medium",
   group: "Hound",
   coat_length: "Short",
@@ -212,8 +195,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Shetland Sheepdog",
-  image:
-    "https://www.akc.org/wp-content/uploads/2017/11/Shetland-Sheepdog-On-White-01.jpg",
+  image: "../sheepdogIRL.png",
   size: "Medium",
   group: "Sporting",
   coat_length: "Long",
@@ -222,8 +204,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Samoyed",
-  image:
-    "https://cdn.wamiz.fr/cdn-cgi/image/format=auto,quality=80,width=1200,height=675,fit=cover/animal/breed/dog/adult/5caf1605d95a6536635501.jpg",
+  image: "../samoyedIRL.png",
   size: "Medium",
   group: "Working",
   coat_length: "Long",
@@ -232,8 +213,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Bedlington Terrier",
-  image:
-    "https://www.petbarn.com.au/petspot/app/uploads/2016/08/104.-Bedlington-Terrier.jpg",
+  image: "../beldingtonIRL.png",
   size: "Small",
   group: "Terrier",
   coat_length: "Medium",
@@ -242,8 +222,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Havanese",
-  image:
-    "https://cdn.shopify.com/s/files/1/1267/6891/files/Havanese_1080x.png?v=1643390305",
+  image: "../havaneseIRL.png",
   size: "Small",
   group: "Toy",
   coat_length: "Long",
@@ -252,8 +231,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Yorkshire Terrier",
-  image:
-    "https://www.purina.co.nz/sites/default/files/styles/ttt_image_510/../2021-02/BREED%20Hero%20Mobile_0000_yorkshire_terrier.jpg?itok=zFe6oRsp",
+  image: "../yorkieIRL.png",
   size: "Small",
   group: "Toy",
   coat_length: "Medium",
@@ -262,8 +240,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Cane Corso",
-  image:
-    "https://bowwowinsurance.com.au/wp-content/uploads/2018/10/cane-corso-700x700.jpg",
+  image: "../corsoIRL.png",
   size: "Large",
   group: "Working",
   coat_length: "Short",
@@ -272,8 +249,7 @@ Dog.create!(
 
 Dog.create!(
   breed: "Bull Terrier",
-  image:
-    "https://www.petbarn.com.au/petspot/app/uploads/2015/01/12.-Bull-Terrier.jpg",
+  image: "../bullterrierIRL.png",
   size: "Medium",
   group: "Terrier",
   coat_length: "Short",
@@ -290,7 +266,7 @@ Dog.create!(
   icon: "../brian.png"
 )
 Dog.create!(
-  breed: "Shar pei",
+  breed: "Shar-pei",
   image:
     "https://www.purina.co.uk/sites/default/files/2021-02/BREED%20Hero_0115_shar_pei.jpg",
   size: "medium",

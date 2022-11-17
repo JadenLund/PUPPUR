@@ -1,17 +1,29 @@
 import React from "react";
-import { Header, Icon, Image } from "semantic-ui-react";
+import { Header, Icon, Image, Button } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 // import dogGroupPicture from "/home/jaden/code/labs/phase-5/PUPPUR/client/src/DogGroupPicture.png";
 
 function About() {
   return (
     <div>
-       <Image size='tiny' centered src="https://cdn-icons-png.flaticon.com/512/1596/1596810.png" />
+      <Image
+        size="tiny"
+        centered
+        src="https://cdn-icons-png.flaticon.com/512/1596/1596810.png"
+      />
       <Header
         as="h2"
-        textAlign='center'
+        textAlign="center"
         content="Learn about new breeds with PUPPUR!"
         subheader="Built by Jaden (Speckles) Lund"
       />
+      <Header.Content className='linkedin'>
+        <Header as="a" href="https://www.linkedin.com/in/jaden-lund-237200237/">
+          Linkedin
+        </Header>
+
+      </Header.Content>
+
       <img
         className="marquee"
         src={

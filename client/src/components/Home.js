@@ -89,7 +89,6 @@ function Home({ client, setClient }) {
               iconPosition="left"
               type="password"
               id="password"
-
               autoComplete="off"
               value={password}
               placeholder="Password..."
@@ -97,8 +96,9 @@ function Home({ client, setClient }) {
             />
             <Checkbox
               onClick={handleClickTerms}
-              label="I agree to the Terms and Conditions"
+              label="I agree to the "
             />
+            <a href="https://medium.com/@lundjaden/pupper-terms-agreements-f3f3122eddeb" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
 
             {agreeTerms ? (
               <Button
@@ -107,7 +107,6 @@ function Home({ client, setClient }) {
                 size="large"
                 onClick={handleSubmit}
                 type="submit"
-
               >
                 Login
               </Button>
@@ -138,11 +137,9 @@ function Home({ client, setClient }) {
             content="Sorry, that username/password is invalid."
           />
         )}
-
+        <Image src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/3035fb76965389.5c7945b0d0567.gif"></Image>
       </Grid.Column>
-
     </Grid>
-
   );
 }
 export default Home;

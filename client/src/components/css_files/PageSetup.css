@@ -76,3 +76,10 @@
   margin-top: 0;
 }
 
+.linkedin{
+  text-align: center;
+}
+.linkedin a:hover{
+  color: teal
+}
+
