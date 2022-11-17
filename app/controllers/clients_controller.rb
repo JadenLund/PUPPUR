@@ -7,6 +7,20 @@ class ClientsController < ApplicationController
     render json: client, status: :created
   end
 
+  def favorite
+    favorite = @current_client.favorite(Dog.find(params[:id]))
+    render json: favorite
+  end
+
+  def unfavorite
+    @current_client.unfavorite(Dog.find(params[:id]))
+    render json: @current_client.favorites
+  end
+
+  def favorites
+    render json: @current_client.all_favorites
+  end
+
   def show
     render json: @current_client
   end

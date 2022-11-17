@@ -1,4 +1,10 @@
 class Favorite < ApplicationRecord
-  belongs_to :client
-  belongs_to :favorited, polymorphic: true
+  extend ActsAsFavoritor::FavoriteScopes
+
+  belongs_to :favoritable, polymorphic: true
+  belongs_to :favoritor, polymorphic: true
+
+  def block!
+    update!(blocked: true)
+  end
 end

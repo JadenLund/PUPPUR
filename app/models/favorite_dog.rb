@@ -1,2 +1,0 @@
-class FavoriteDog < ApplicationRecord
-end

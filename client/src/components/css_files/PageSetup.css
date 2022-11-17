@@ -1,9 +1,14 @@
-/* .favorite-icon {
+.favorite-icon {
   z-index: 999;
 }
 .favorite-icon :hover {
   color: firebrick;
-} */
+}
+
+.favorite-icon.active .icon{
+  color: firebrick;
+}
+
 .checkbox-filters {
   min-width: 180px;
   color: rgb(22, 120, 120);

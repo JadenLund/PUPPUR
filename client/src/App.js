@@ -7,6 +7,7 @@ import Logout from "./components/Logout";
 import NavBar from "./components/NavBar";
 import PageSetup from "./components/PageSetup";
 import {Segment } from "semantic-ui-react";
+import FavoriteDogs from "./components/FavoriteDogs";
 
 function App() {
   const [client, setClient] = useState(null);
@@ -31,7 +32,7 @@ function App() {
             </Segment>
             <Routes>
               <Route path="/about" element={<About />} />
-              {/* <Route path="/favorites" element={<FavoriteDogs />} /> */}
+              <Route path="/favorites" element={<FavoriteDogs client={client}  />} />
               <Route path="/" element={<PageSetup client={client} />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>

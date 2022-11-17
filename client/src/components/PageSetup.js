@@ -27,17 +27,11 @@ function PageSetup({ client, setClient }) {
       {client ? (
         <div>
           <Segment>
-            <div className="search-title">
-
-              <SearchBar
-                searchTerm={searchTerm}
-                onChangeSearch={setSearchTerm}
-              />
-            </div>
+            <SearchBar searchTerm={searchTerm} onChangeSearch={setSearchTerm} />
           </Segment>
           <div className="filter-dogs">
             <Segment>
-            <div>
+              <div>
                 <Header textAlign="center" as="h2">
                   Filters
                 </Header>

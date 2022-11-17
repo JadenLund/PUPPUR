@@ -22,7 +22,7 @@ function exampleReducer(state, action) {
   }
 }
 
-function DogBreedCard({ client, dog }) {
+function DogBreedCard({ client, dog, handleFavorites, handleUnfavorites }) {
   const [moreInfo, setMoreInfo] = useState(false);
   const [comments, setComments] = useState(dog.comments || []);
   const [newComment, setNewComment] = useState(false);
@@ -96,7 +96,7 @@ function DogBreedCard({ client, dog }) {
                   <h3 className="comment-title">
                     {eachCommentForThisDog.name}
                   </h3>
-                  s
+
                   <p className="comment-summary">
                     {eachCommentForThisDog.summary}
                   </p>
@@ -140,11 +140,12 @@ function DogBreedCard({ client, dog }) {
       </Modal>
 
       <Card className="dog-card">
-        {/* <Image
-          className="favorite-icon"
+        <Image
+          onClick={() => dog.favorite ? handleUnfavorites(dog.id) : handleFavorites(dog.id)}
+          className={`favorite-icon ${dog.favorite ? 'active' : ""}`}
           fluid
           label={{ as: "a", corner: "left", icon: "heart" }}
-        /> */}
+        />
         <div className="dog-card-image">
           <Reveal animated="move" instant>
             <Reveal.Content visible>
@@ -164,7 +165,7 @@ function DogBreedCard({ client, dog }) {
           <center>
             <a onClick={handleMoreInfo}>
               {moreInfo ? "LESS INFO" : "MORE INFO"}
-            </a>{" "}
+            </a>
           </center>
           <Button
             floated="right"

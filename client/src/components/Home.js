@@ -34,7 +34,6 @@ function Home({ client, setClient }) {
           setClient(data);
           setErrors("hide");
         }
-        console.log({ data });
       });
   };
 
@@ -48,12 +47,10 @@ function Home({ client, setClient }) {
     }).then((resp) => {
       if (resp.ok) {
         resp.json().then((client) => {
-          console.log({ client });
           setErrors("success");
         });
       } else {
         resp.json().then((err) => {
-          console.log({ err });
           setErrors(err.errors);
         });
       }
@@ -91,8 +88,9 @@ function Home({ client, setClient }) {
               fluid
               icon="lock"
               iconPosition="left"
-              type="text"
+              type="password"
               id="password"
+
               autoComplete="off"
               value={password}
               placeholder="Password..."
