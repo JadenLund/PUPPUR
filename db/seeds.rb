@@ -16,23 +16,21 @@ puts "Seeding dog breeds..."
 Dog.create!(
   breed: "Doberman Pinscher",
   image:
-    "https://vgl.ucdavis.edu/sites/g/files/dgvnsk8836/files/inline-images/Doberman-Pinscher-800px.jpg",
+    "https://st.depositphotos.com/1004592/3767/i/600/depositphotos_37677629-stock-photo-doberman-pinscher.jpg",
   size: "Large",
   group: "Working",
   coat_length: "Short",
-  icon:
-    "https://static.vecteezy.com/system/resources/previews/002/736/838/non_2x/doberman-dog-pet-mascot-breed-head-character-free-vector.jpg"
+  icon: "../Doberman.png"
 )
 
 Dog.create!(
   breed: "Akita",
   image:
-    "https://www.purina.co.uk/sites/default/files/styles/square_medium_440x440/public/2022-07/Japanese-Akita.jpg?itok=GbMV9z73",
+    "https://www.purina.co.uk/sites/default/files/styles/square_medium_440x440/../2022-07/Japanese-Akita.jpg?itok=GbMV9z73",
   size: "Large",
   group: "Working",
   coat_length: "Medium",
-  icon:
-    "https://media.istockphoto.com/vectors/flat-colored-black-shiba-inu-front-face-with-tongue-out-vector-id1278407981?k=20&m=1278407981&s=170667a&w=0&h=XkDfvwHPkXoS4qOTrA6Gnus9boA7ol1mkoy7_E2TE9c="
+  icon: "../akita.png"
 )
 
 Dog.create!(
@@ -41,8 +39,7 @@ Dog.create!(
   size: "Medium",
   group: "Non-Sporting",
   coat_length: "Short",
-  icon:
-    "https://media.istockphoto.com/vectors/border-collie-cute-kawaii-vector-character-vector-id1193510957?k=20&m=1193510957&s=170667a&w=0&h=bgBPOJaVRWvxE-nEyRHnmoYRdkmT6NhaJ25F_gYDS_A="
+  icon: "../Xolo.png"
 )
 
 Dog.create!(
@@ -52,8 +49,7 @@ Dog.create!(
   size: "Large",
   group: "Sporting",
   coat_length: "Long",
-  icon:
-    "https://thumbs.dreamstime.com/b/outlined-cute-golden-retriever-front-head-196761032.jpg"
+  icon: "../goldenRetriever.png"
 )
 
 Dog.create!(
@@ -63,19 +59,17 @@ Dog.create!(
   size: "Large",
   group: "Sporting",
   coat_length: "Medium",
-  icon:
-    "https://c8.alamy.com/zooms/9/56aac6229ea84feca3c186d5b00eb115/2gnkck3.jpg"
+  icon: "../labradorRetriever.png"
 )
 
 Dog.create!(
   breed: "Chihuahua",
   image:
-    "https://www.purina.co.uk/sites/default/files/styles/square_medium_440x440/public/2022-07/Chihuahua-Smooth-Coat.jpg?itok=J40w8Swm",
+    "https://www.purina.co.uk/sites/default/files/styles/square_medium_440x440/../2022-07/Chihuahua-Smooth-Coat.jpg?itok=J40w8Swm",
   size: "Small",
   group: "Toy",
   coat_length: "Medium",
-  icon:
-    "https://media.istockphoto.com/vectors/chihuahua-cute-kawaii-vector-character-vector-id1192935139?k=20&m=1192935139&s=170667a&w=0&h=FDZFBb1QUbO5O1g5TOhahyykp11whzkf5pNwK9d3oyg="
+  icon: "../chihuahua.png"
 )
 
 Dog.create!(
@@ -85,8 +79,7 @@ Dog.create!(
   size: "Medium",
   group: "Sporting",
   coat_length: "Medium",
-  icon:
-    "https://i.pinimg.com/originals/6f/54/97/6f54977b9364c86a1fe5652e17779049.jpg"
+  icon: "../shibaInu.png"
 )
 
 Dog.create!(
@@ -96,8 +89,7 @@ Dog.create!(
   size: "Large",
   group: "Non-Sporting",
   coat_length: "Medium",
-  icon:
-    "https://media.istockphoto.com/vectors/toy-poodle-front-head-flat-color-vector-id1276937437?k=20&m=1276937437&s=170667a&w=0&h=FSe6vTFuoHIeI75p5-vyhF7hC3aIsrhtP7jgpS1fAEc="
+  icon: "../standardPoodle.png"
 )
 
 Dog.create!(
@@ -107,19 +99,17 @@ Dog.create!(
   size: "Medium",
   group: "Working",
   coat_length: "Long",
-  icon:
-    "https://m.media-amazon.com/images/I/41gTlBj2OXL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg"
+  icon: "../husky.png"
 )
 
 Dog.create!(
   breed: "French Bulldog",
   image:
-    "https://www.purina.co.nz/sites/default/files/styles/ttt_image_510/public/2021-02/BREED%20Hero%20Mobile_0114_french_bulldog.jpg?itok=WANE6bt-",
+    "https://www.purina.co.nz/sites/default/files/styles/ttt_image_510/../2021-02/BREED%20Hero%20Mobile_0114_french_bulldog.jpg?itok=WANE6bt-",
   size: "Small",
   group: "Non-Sporting",
   coat_length: "Short",
-  icon:
-    "https://cdn.xxl.thumbs.canstockphoto.com/cute-cartoon-french-bulldog-face-drawing-adorable-little-dog-portrait-simple-vector-illustration-eps-vector_csp51515088.jpg"
+  icon: "../frenchBulldog.png"
 )
 
 Dog.create!(
@@ -129,8 +119,7 @@ Dog.create!(
   size: "Large",
   group: "Herding",
   coat_length: "Medium",
-  icon:
-    "https://image.shutterstock.com/image-vector/cute-little-dog-german-shepherd-260nw-1559573690.jpg"
+  icon: "../germanShepherd.png"
 )
 
 Dog.create!(
@@ -139,19 +128,16 @@ Dog.create!(
   size: "Small",
   group: "Non-Sporting",
   coat_length: "Short",
-  icon:
-    "https://img.freepik.com/premium-vector/cute-dogs-face-avatar-funny-bulldog-puppy-face-pups-head-portrait-adorable-doggy-snout-sweet-amusing-pets-muzzle-flat-vector-illustration-isolated-white-background_633472-696.jpg?w=2000"
+  icon: "../englishBulldog.png"
 )
 
 Dog.create!(
   breed: "Afghan Hound",
-  image:
-    "https://www.purina.co.uk/sites/default/files/styles/square_medium_440x440/public/2022-07/Afghan-Hound.jpg?itok=JfyHgCyq",
+  image: "db/Dog_images/afghanHound.png",
   size: "Large",
   group: "Hound",
   coat_length: "Medium",
-  icon:
-    "https://media.istockphoto.com/vectors/simple-and-adorable-afghan-hound-illustration-front-face-vector-id1426163310?b=1&k=20&m=1426163310&s=170667a&w=0&h=6aT6xzn3zlBM_F9j6tGOa6b6XjoMKKv2eobakmNbdCo="
+  icon: "../afghanHound.png"
 )
 
 Dog.create!(
@@ -161,7 +147,7 @@ Dog.create!(
   size: "Medium",
   group: "Miscellaneous ",
   coat_length: "Medium",
-  icon: "https://cdn-icons-png.flaticon.com/512/4843/4843819.png"
+  icon: "../borderCollie.png"
 )
 
 Dog.create!(
@@ -171,8 +157,7 @@ Dog.create!(
   size: "Medium",
   group: "Non-Sporting",
   coat_length: "Medium",
-  icon:
-    "https://images.yappy.com/yappicon/americaneskimodog/americaneskimodog-01.png"
+  icon: "../americanEskimo.png"
 )
 
 Dog.create!(
@@ -182,8 +167,7 @@ Dog.create!(
   size: "Large",
   group: "Working",
   coat_length: "Short",
-  icon:
-    "https://c8.alamy.com/compfr/2h8ay6p/dessin-drole-de-tete-de-chien-de-rottweiler-portrait-de-chiot-mignon-illustration-de-clip-d-art-vectoriel-2h8ay6p.jpg"
+  icon: "../rottweiler.png"
 )
 
 Dog.create!(
@@ -193,8 +177,7 @@ Dog.create!(
   size: "Small",
   group: "Hound",
   coat_length: "Short",
-  icon:
-    "https://media.istockphoto.com/vectors/dachshund-dog-face-vector-illustration-vector-id1221502425?k=20&m=1221502425&s=612x612&w=0&h=AiDxCRy60HyOLT42H50ytguRg8exvAIat1bCK6lxVWc="
+  icon: "../dachshund.png"
 )
 
 Dog.create!(
@@ -204,8 +187,7 @@ Dog.create!(
   size: "Large",
   group: "Working",
   coat_length: "Short",
-  icon:
-    "https://t3.ftcdn.net/jpg/01/21/81/14/360_F_121811489_x4kMoUmBMYf3Aty2MszVzK5739Df9ECx.jpg"
+  icon: "../greatDane.png"
 )
 
 Dog.create!(
@@ -215,8 +197,7 @@ Dog.create!(
   size: "Small",
   group: "Toy",
   coat_length: "Long",
-  icon:
-    "https://thumbs.dreamstime.com/z/outlined-simple-adorable-white-maltese-dog-front-head-illustration-outlined-simple-adorable-white-maltese-dog-front-head-211365377.jpg"
+  icon: "../maltese.png"
 )
 
 Dog.create!(
@@ -226,8 +207,7 @@ Dog.create!(
   size: "Medium",
   group: "Hound",
   coat_length: "Short",
-  icon:
-    "https://images.assetsdelivery.com/compings_v2/you1023/you10232112/you1023211200012.jpg"
+  icon: "../bassetHound.png"
 )
 
 Dog.create!(
@@ -237,8 +217,7 @@ Dog.create!(
   size: "Medium",
   group: "Sporting",
   coat_length: "Long",
-  icon:
-    "https://img.myloview.com/posters/outlined-simple-shetland-sheepdog-front-head-700-271138233.jpg"
+  icon: "../Shetlant_sheep_dog.png"
 )
 
 Dog.create!(
@@ -248,8 +227,7 @@ Dog.create!(
   size: "Medium",
   group: "Working",
   coat_length: "Long",
-  icon:
-    "https://img.freepik.com/premium-vector/dog-samoyed-head-iconsvector-illustration-with-cartoon-style_650087-113.jpg?w=2000"
+  icon: "../samoyed.png"
 )
 
 Dog.create!(
@@ -259,8 +237,7 @@ Dog.create!(
   size: "Small",
   group: "Terrier",
   coat_length: "Medium",
-  icon:
-    "http://cdn.shopify.com/s/files/1/0550/5659/7223/products/bedlington-terrier-sticker-272049.jpg?v=1643685033"
+  icon: "../beldingtonTerrier.png"
 )
 
 Dog.create!(
@@ -270,19 +247,17 @@ Dog.create!(
   size: "Small",
   group: "Toy",
   coat_length: "Long",
-  icon:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2g0kzlQYyXlglNE_kBEj_vrIsKP2gUA2fZVpOqp83tmCXD5MANnqkE8y4x1lBCPGAFHw&usqp=CAU"
+  icon: "../havanese.png"
 )
 
 Dog.create!(
   breed: "Yorkshire Terrier",
   image:
-    "https://www.purina.co.nz/sites/default/files/styles/ttt_image_510/public/2021-02/BREED%20Hero%20Mobile_0000_yorkshire_terrier.jpg?itok=zFe6oRsp",
+    "https://www.purina.co.nz/sites/default/files/styles/ttt_image_510/../2021-02/BREED%20Hero%20Mobile_0000_yorkshire_terrier.jpg?itok=zFe6oRsp",
   size: "Small",
   group: "Toy",
   coat_length: "Medium",
-  icon:
-    "https://thumbs.dreamstime.com/b/yorkshire-terrier-cute-icon-graphic-illustration-vector-t-shirt-emblem-tattoo-logo-yorkshire-terrier-cute-icon-cute-pet-186481543.jpg"
+  icon: "../yorkshireTerrier.png"
 )
 
 Dog.create!(
@@ -292,8 +267,7 @@ Dog.create!(
   size: "Large",
   group: "Working",
   coat_length: "Short",
-  icon:
-    "https://images.yappy.com/yappicon/canecorsoitaliano/canecorsoitaliano-02.png"
+  icon: "../caneCorso.png"
 )
 
 Dog.create!(
@@ -303,9 +277,9 @@ Dog.create!(
   size: "Medium",
   group: "Terrier",
   coat_length: "Short",
-  icon:
-    "https://thumbs.dreamstime.com/b/cute-simple-illustration-bull-terrier-dog-front-head-all-hand-drawn-248727871.jpg"
+  icon: "../Bull_terrier.png"
 )
+
 Dog.create!(
   breed: "Brian Griffin",
   image:
@@ -313,8 +287,16 @@ Dog.create!(
   size: "Medium",
   group: "Sporting",
   coat_length: "short",
-  icon:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEv5Z2ebka66Bf7B6YGSZuPDL9gnsC5sxx8w&usqp=CAU"
+  icon: "../brian.png"
+)
+Dog.create!(
+  breed: "Shar pei",
+  image:
+    "https://www.purina.co.uk/sites/default/files/2021-02/BREED%20Hero_0115_shar_pei.jpg",
+  size: "medium",
+  group: "Non-Sporting",
+  coat_length: "short",
+  icon: "../sharpei.png"
 )
 # Dog.create!(breed: "", image: "",  size: "", group "", coat_length: "", icon: "")
 

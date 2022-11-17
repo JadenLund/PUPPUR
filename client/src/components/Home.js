@@ -69,7 +69,6 @@ function Home({ client, setClient }) {
           <Image src="https://cdn-icons-png.flaticon.com/512/1596/1596810.png" />{" "}
           Welcome to PUPPUR!
         </Header>
-
         <Form size="large">
           <Segment stacked>
             <Form.Input
@@ -108,6 +107,7 @@ function Home({ client, setClient }) {
                 size="large"
                 onClick={handleSubmit}
                 type="submit"
+
               >
                 Login
               </Button>
