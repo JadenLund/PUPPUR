@@ -3,8 +3,10 @@ import {
   Reveal,
   Card,
   Grid,
+  Popup,
   Modal,
   Button,
+  Header,
   Segment,
   Comment,
 } from "semantic-ui-react";
@@ -98,7 +100,7 @@ function DogBreedCard({ client, dog, handleFavorites, handleUnfavorites }) {
                   comments.map((eachCommentForThisDog) => (
                     <Segment key={eachCommentForThisDog.id}>
                       <div>
-                        <Comment.Author as='h2' className="comment-title">
+                        <Comment.Author as="h2" className="comment-title">
                           {eachCommentForThisDog.name}
                         </Comment.Author>
                         <Comment.Text className="comment-summary">
@@ -152,52 +154,59 @@ function DogBreedCard({ client, dog, handleFavorites, handleUnfavorites }) {
         </Modal.Content>
       </Modal>
 
-      <Card className="dog-card">
-        <Image
-          onClick={() =>
-            dog.favorite ? handleUnfavorites(dog.id) : handleFavorites(dog.id)
-          }
-          className={`favorite-icon ${dog.favorite ? "active" : ""}`}
-          fluid
-          label={{ as: "a", corner: "left", icon: "heart" }}
-        />
-        <div className="dog-card-image">
-          <Reveal animated="move" instant>
-            <Reveal.Content visible>
-              <Image className="dog-icon" src={dog.icon} size={"medium"} />
-            </Reveal.Content>
-            <Reveal.Content hidden>
-              <Image src={dog.image} size="medium" />
-            </Reveal.Content>
-            <Grid columns={2}></Grid>
-          </Reveal>
-        </div>
-        <Card.Content>
-          <Card.Header>{dog.breed}</Card.Header>
-        </Card.Content>
+      <Image
+        onClick={() =>
+          dog.favorite ? handleUnfavorites(dog.id) : handleFavorites(dog.id)
+        }
+        className={`favorite-icon ${dog.favorite ? "active" : ""}`}
+        fluid
+        label={{ as: "a", corner: "left", icon: "heart" }}
+      />
+      <div className="dog-card-image">
+        <Reveal animated="move" instant>
+          <Reveal.Content visible>
+            <Image className="dog-icon" src={dog.icon} size={"medium"} />
+          </Reveal.Content>
+          <Reveal.Content hidden>
+            <Image src={dog.image} size="medium" />
+          </Reveal.Content>
+        </Reveal>
+      </div>
+      <>
+        <Header textAlign="center">{dog.breed}</Header>
 
         <Card.Content extra>
-          <center>
-            <a onClick={handleMoreInfo}>
-              {moreInfo ? "LESS INFO" : "MORE INFO"}
-            </a>
-          </center>
+          <Popup
+            onClose={handleMoreInfo}
+            onOpen={handleMoreInfo}
+            position="bottom center"
+            content={
+              <>
+                <p>Size: {dog.size}</p>
+                <p>AKC Group: {dog.group}</p>
+                <p>Coat Length: {dog.coat_length}</p>
+              </>
+            }
+            on="click"
+            trigger={
+              <Header textAlign="center">
+                <Header.Subheader>
+                  {moreInfo ? "LESS INFO" : "MORE INFO"}
+                </Header.Subheader>
+              </Header>
+            }
+          />
+
           <Button
+            fluid
             floated="right"
             color="teal"
             onClick={() => dispatch({ type: "OPEN_MODAL", dimmer: "blurring" })}
           >
             Comments
           </Button>
-          {moreInfo ? (
-            <Card.Content extra>
-              <p>Size: {dog.size}</p>
-              <p>AKC Group: {dog.group}</p>
-              <p>Coat Length: {dog.coat_length}</p>
-            </Card.Content>
-          ) : null}
         </Card.Content>
-      </Card>
+      </>
     </div>
   );
 }

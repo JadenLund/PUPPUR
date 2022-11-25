@@ -31,15 +31,13 @@ function PageSetup({ client, setClient }) {
           </Segment>
           <div className="filter-dogs">
             <Segment>
-              <div>
-                <Header textAlign="center" as="h2">
-                  Filters
-                </Header>
-                <Image
-                  size="small"
-                  src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce8b1e76965389.5c7945b0cffef.gif"
-                />
-              </div>
+              <Header textAlign="center" as="h2">
+                Filters
+              </Header>
+              <Image
+                size="small"
+                src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce8b1e76965389.5c7945b0cffef.gif"
+              />
               <Filter
                 sizeLabels={sizeLabels}
                 akcGroupLabels={akcGroupLabels}
@@ -47,7 +45,6 @@ function PageSetup({ client, setClient }) {
                 handleToggle={handleToggle}
               />
             </Segment>
-            {/* <Segment> */}
             <DogBreeds
               client={client}
               searchTerm={searchTerm}
@@ -56,7 +53,6 @@ function PageSetup({ client, setClient }) {
               akcGroupLabels={akcGroupLabels}
               coatLengthLabels={coatLengthLabels}
             />
-            {/* </Segment> */}
           </div>
         </div>
       ) : (

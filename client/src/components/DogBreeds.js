@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DogBreedCard from "./DogBreedCard";
-import { Card } from "semantic-ui-react";
+import { Card, Container } from "semantic-ui-react";
 import Logout from "./Logout";
 
 function DogBreeds({
@@ -32,7 +32,6 @@ function DogBreeds({
         setFavorites(resp);
       });
   }, []);
-
 
   function handleFavorites(dog_id) {
     const favoritesCopy = [...favorites];
@@ -104,10 +103,16 @@ function DogBreeds({
       );
     });
 
+  {
+    /* //returns each dog card to display on the page*/
+  }
   return (
-    <>
-      {/* //returns each dog card to display on the page*/}
-      <Card.Group className="all-cards" itemsPerRow={4}>
+    <Container >
+      <Card.Group
+      centered
+        className="all-cards"
+        itemsPerRow={dogsToDisplay.length >= 4 ? 4 : dogsToDisplay.length}
+      >
         {dogsToDisplay.map((dog) => (
           <Card className="dog-card" key={dog.id}>
             <DogBreedCard
@@ -120,7 +125,7 @@ function DogBreeds({
           </Card>
         ))}
       </Card.Group>
-    </>
+    </Container>
   );
 }
 export default DogBreeds;

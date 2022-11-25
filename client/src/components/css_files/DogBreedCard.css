@@ -1,3 +1,7 @@
 .dog-card-image .ui.image {
   background-color: white;
 }
+
+.ui.cards>.card.dog-card{
+  max-width: 250px;
+}
